@@ -1,13 +1,9 @@
-import logo from "./logo.svg";
 import "./Home.css";
 
 import styled from "styled-components";
 
 const StyledContainer = styled.div`
   text-align: center;
-`;
-
-const StyledHeader = styled.header`
   background-color: #282c34;
   min-height: 100vh;
   display: flex;
@@ -18,26 +14,43 @@ const StyledHeader = styled.header`
   color: white;
 `;
 
-const StyledLink = styled.a`
-  color: #61dafb;
+const StyledHeader = styled.h1``;
+const StyledMenuOptionsContainer = styled.div`
+  display: flex;
+`;
+const StyledSelectOption = styled.div`
+  display: inline;
+  padding: 20px;
+`;
+const StyledButton = styled.a`
+  display: block;
+  background-color: green;
+  border-radius: 6px;
+  padding: 20px;
 `;
 
-const Home = () => (
-  <StyledContainer>
-    <StyledHeader>
-      <img src={logo} className="Home-logo" alt="logo" />
-      <p>
-        Edit <code>src/pages/Home/Home.tsx</code> and save to reload.
-      </p>
-      <StyledLink
-        href="https://reactjs.org"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        Learn React
-      </StyledLink>
-    </StyledHeader>
-  </StyledContainer>
-);
+const Home = () => {
+  const joinOption = (
+    <>
+      <StyledButton href="#/room/123">Join</StyledButton>
+      <input></input>
+    </>
+  );
+
+  const createOption = <StyledButton>Create Room</StyledButton>;
+
+  const options = [joinOption, createOption];
+
+  return (
+    <StyledContainer>
+      <StyledHeader>Tournament RPS</StyledHeader>
+      <StyledMenuOptionsContainer>
+        {options.map((op) => (
+          <StyledSelectOption>{op}</StyledSelectOption>
+        ))}
+      </StyledMenuOptionsContainer>
+    </StyledContainer>
+  );
+};
 
 export default Home;
