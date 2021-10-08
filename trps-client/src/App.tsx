@@ -17,6 +17,15 @@ const HeaderContainter = styled.div`
 `;
 const PageContainter = styled.div`
   flex: 1 1 auto;
+  text-align: center;
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
 `;
 const FooterContainter = styled.div`
   flex: 0 1 auto;
@@ -25,12 +34,9 @@ const FooterContainter = styled.div`
 function App() {
   const page = (
     <Switch>
-      {/* <Route path="/about">
-            <About />
-          </Route>
-          <Route path="/users">
-            <Users />
-          </Route> */}
+      <Route path="/room">
+        <Room />
+      </Route>
       <Route path="/">
         <Home />
       </Route>
